@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 1330351753957077683, guid: 5bb58a677afc53a4580718dba9ec4f63, type: 3}
+  debugDrawing: 1

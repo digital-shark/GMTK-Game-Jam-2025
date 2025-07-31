@@ -7,7 +7,7 @@ public class Line : MonoBehaviour
 {
     public LineRenderer lineRenderer;
 
-    List<Vector3> points;
+    public List<Vector3> points { get; private set; }
 
     [SerializeField]
     private float minDistance = 0.1f;
@@ -22,7 +22,7 @@ public class Line : MonoBehaviour
             return;
         }
 
-        if (Vector3.Distance(points.Last(),position) > minDistance)
+        if (Vector3.Distance(points.Last(), position) > minDistance)
         {
             SetPoint(position);
         }

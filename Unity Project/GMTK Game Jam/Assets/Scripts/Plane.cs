@@ -129,7 +129,7 @@ public class Plane : MonoBehaviour
 
     }
 
-    void CalculateState(float deltaTime) 
+    void CalculateState(float deltaTime)
     {
         Quaternion inverseRotation = Quaternion.Inverse(rb.rotation);
         velocity = rb.linearVelocity;
@@ -139,9 +139,9 @@ public class Plane : MonoBehaviour
         CalculateAngleOfAttack();
     }
 
-    void CalculateAngleOfAttack() 
+    void CalculateAngleOfAttack()
     {
-        if (localVelocity.sqrMagnitude < 0.1f) 
+        if (localVelocity.sqrMagnitude < 0.1f)
         {
             angleOfAttack = 0;
             angleOfAttackYaw = 0;
@@ -160,7 +160,7 @@ public class Plane : MonoBehaviour
         lastVelocity = velocity;
     }
 
-    void UpdateThrust() 
+    void UpdateThrust()
     {
         rb.AddRelativeForce(Vector3.forward * Throttle * maxThrust);
     }
