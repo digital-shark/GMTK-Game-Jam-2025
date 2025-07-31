@@ -4,11 +4,13 @@ using UnityEngine.InputSystem;
 public class FlightController : MonoBehaviour
 {
     simplePlane plane;
+    FirstPersonController cameraController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         plane = GetComponent<simplePlane>();
+        cameraController = GetComponentInChildren<FirstPersonController>();
     }
 
     Vector3 controlInput;
@@ -43,6 +45,14 @@ public class FlightController : MonoBehaviour
 
         var input = context.ReadValue<float>();
         controlInput = new Vector3(controlInput.x, input, controlInput.z);
+    }
+
+    public void OnMouseInput(InputAction.CallbackContext context) 
+    {
+        if (cameraController == null) return;
+
+        var input = context.ReadValue<Vector2>();
+        cameraController.mouseinput = input;
     }
 
     // Update is called once per frame
