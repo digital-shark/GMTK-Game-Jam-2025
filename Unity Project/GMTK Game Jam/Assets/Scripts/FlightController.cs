@@ -3,12 +3,12 @@ using UnityEngine.InputSystem;
 
 public class FlightController : MonoBehaviour
 {
-    Plane plane;
+    simplePlane plane;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        plane = GetComponent<Plane>();
+        plane = GetComponent<simplePlane>();
     }
 
     Vector3 controlInput;
@@ -19,7 +19,7 @@ public class FlightController : MonoBehaviour
 
         if (context.phase == InputActionPhase.Performed)
         {
-            plane.ToggleFlaps();
+            //plane.ToggleFlaps();
         }
     }
     public void SetThrottleInput(InputAction.CallbackContext context)
