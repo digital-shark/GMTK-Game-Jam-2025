@@ -55,6 +55,19 @@ public class FlightController : MonoBehaviour
         cameraController.mouseinput = input;
     }
 
+    public void OnSmokeInput(InputAction.CallbackContext context)
+    {
+        if (plane == null) return;
+        if (context.phase == InputActionPhase.Performed)
+        {
+            plane.SetSmokeInput(true);
+        }
+        else
+        {
+            plane.SetSmokeInput(false);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

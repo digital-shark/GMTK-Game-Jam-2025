@@ -203,7 +203,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5293,6 +5293,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 364df4e7-8147-4b1c-aa2c-347e58ec9e1d
     m_ActionName: 'Player/MouseMovement[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5878657165994810266}
+        m_TargetAssemblyTypeName: FlightController, Assembly-CSharp
+        m_MethodName: OnSmokeInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: adac83c0-4daa-4940-9789-6f4160657ccc
+    m_ActionName: 'Player/Smoke[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -5432,6 +5448,9 @@ MonoBehaviour:
       Data3: -1935592827
       Data4: 1945276718
     Path: event:/Test
+  smokeDrainRate: 0.5
+  amountOfSmoke: 100
+  smokePS: {fileID: 5660049502929573728}
 --- !u!1 &7344676770654045707
 GameObject:
   m_ObjectHideFlags: 0

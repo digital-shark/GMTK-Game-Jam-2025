@@ -29,6 +29,10 @@ public class simplePlane : MonoBehaviour
     private Vector3 localVelocity;
 
     public EventReference clip;
+    
+    public float smokeDrainRate = 0.5f;
+    public float amountOfSmoke = 100.0f;
+    public ParticleSystem smokePS;
 
     private bool once = true;
 
@@ -59,6 +63,19 @@ public class simplePlane : MonoBehaviour
         updateHeavyNose();
         updatePitch();
         updateRoll();
+
+        if (smokeTrailInput)
+        {
+            if (amountOfSmoke > 0)
+            {
+                amountOfSmoke -= smokeDrainRate * Time.deltaTime;
+            }
+            else
+            {
+                amountOfSmoke = 0;
+                FindAnyObjectByType<GameManager>().ShowScoreScreen();
+            }
+        }
     }
 
     void updateHeavyNose() 
@@ -102,6 +119,7 @@ public class simplePlane : MonoBehaviour
 
     float throttleInput;
     Vector3 controlInput;
+    bool smokeTrailInput;
 
     public void SetThrottleInput(float input)
     {
@@ -113,5 +131,20 @@ public class simplePlane : MonoBehaviour
     {
         //if (Dead) return;
         controlInput = Vector3.ClampMagnitude(input, 1);
+    }
+
+    public void SetSmokeInput(bool input)
+    {
+        //if (Dead) return;
+        smokeTrailInput = input;
+
+        if (smokeTrailInput)
+        {
+            smokePS.Play();
+        }
+        else
+        {
+            smokePS.Stop();
+        }
     }
 }
