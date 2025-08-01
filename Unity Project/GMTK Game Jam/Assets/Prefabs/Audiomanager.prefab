@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75cbe2ca1bf57a4b9eca0b9818456d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Music:
+    Guid:
+      Data1: -1827701500
+      Data2: 1224953422
+      Data3: 930872982
+      Data4: 609674769
+    Path: event:/audio test
