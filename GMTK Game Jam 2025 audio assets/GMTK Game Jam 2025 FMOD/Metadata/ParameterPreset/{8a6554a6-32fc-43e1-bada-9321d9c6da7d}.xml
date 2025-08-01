@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8a6554a6-32fc-43e1-bada-9321d9c6da7d}">
+		<property name="name">
+			<value>RPM Pitch</value>
+		</property>
+		<relationship name="folder">
+			<destination>{75be2395-c11f-4f61-90f3-89662923c890}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ab2b34d9-1553-4eaf-b5bb-880f0a1cc4f2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ab2b34d9-1553-4eaf-b5bb-880f0a1cc4f2}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
