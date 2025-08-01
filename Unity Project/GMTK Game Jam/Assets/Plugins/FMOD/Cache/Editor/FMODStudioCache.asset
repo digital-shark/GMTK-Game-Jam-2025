@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../../GMTK Game Jam 2025 audio assets/GMTK Game Jam 2025 FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638896621113466362
+  lastModified: 638896626603105498
   FileSizes:
   - Name: Desktop
     Value: 14976
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: ../../GMTK Game Jam 2025 audio assets/GMTK Game Jam 2025 FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638896621112536197
+  lastModified: 638896626992267314
   FileSizes:
   - Name: Desktop
-    Value: 800
+    Value: 760
   Exists: 1
 --- !u!114 &-2794271882924653659
 MonoBehaviour:
@@ -55,10 +55,10 @@ MonoBehaviour:
   Path: ../../GMTK Game Jam 2025 audio assets/GMTK Game Jam 2025 FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638896621112521193
+  lastModified: 638896626992177308
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1545984
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -78,12 +78,13 @@ MonoBehaviour:
   - {fileID: -3191132543804570380}
   EditorEvents:
   - {fileID: 3037527484239800699}
+  - {fileID: 7769379791757789409}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2794271882924653659}
   StringsBanks:
   - {fileID: -3041504349975163762}
-  cacheTime: 638896621113466362
+  cacheTime: 638896626992267314
   cacheVersion: 131625
 --- !u!114 &3037527484239800699
 MonoBehaviour:
@@ -103,8 +104,7 @@ MonoBehaviour:
     Data2: 1200756302
     Data3: -1935592827
     Data4: 1945276718
-  Banks:
-  - {fileID: -3191132543804570380}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -112,3 +112,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7769379791757789409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/audio test
+  m_EditorClassIdentifier: 
+  Path: event:/audio test
+  Guid:
+    Data1: -1827701500
+    Data2: 1224953422
+    Data3: 930872982
+    Data4: 609674769
+  Banks:
+  - {fileID: -2794271882924653659}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 123648
