@@ -1,8 +1,14 @@
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
+
+    public EventReference Music;
+
+    private EventInstance bgMusic;
+
 
     private void Awake()
     {
@@ -14,6 +20,19 @@ public class AudioManager : MonoBehaviour
 
         instance = this;
     }
+
+    private void Start()
+    {
+        bgMusic = createInstance(Music);
+        bgMusic.start();
+    }
+
+    public EventInstance createInstance(EventReference sound) 
+    {
+        return RuntimeManager.CreateInstance(sound);
+
+    }
+
 
     public void PlayOneshot(EventReference sound, Vector3 worldposition) 
     {
