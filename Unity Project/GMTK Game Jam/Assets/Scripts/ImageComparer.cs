@@ -39,7 +39,7 @@ public class ImageComparer : MonoBehaviour
     }
 }
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(ImageComparer))]
 public class ImageComparerEditor : Editor
 {
@@ -55,3 +55,4 @@ public class ImageComparerEditor : Editor
         }
     }
 }
+#endif
