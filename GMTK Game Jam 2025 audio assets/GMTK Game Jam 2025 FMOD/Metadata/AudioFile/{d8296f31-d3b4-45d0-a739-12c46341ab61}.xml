@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{004a2435-99ab-4513-a446-779b8b7ad16f}">
+	<object class="AudioFile" id="{d8296f31-d3b4-45d0-a739-12c46341ab61}">
 		<property name="assetPath">
-			<value>low:altitude.wav</value>
+			<value>low altitude.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
