@@ -5,14 +5,14 @@ using static UnityEngine.GraphicsBuffer;
 public class ImageComparer : MonoBehaviour
 {
     public Texture2D referenceTexture;
-    public DrawingCanvas drawingCanvas;
+    public RenderTexture drawTexture;
 
     [Range(0.1f, 1f)] public float threshold = 0.5f;
     public float score;
 
     public void Compare()
     {
-        Texture2D userTex = drawingCanvas.GetDrawnTexture();
+        Texture2D userTex = GetDrawnTexture();
 
         if (userTex.width != referenceTexture.width || userTex.height != referenceTexture.height)
         {
@@ -35,7 +35,29 @@ public class ImageComparer : MonoBehaviour
         }
 
         score = (union == 0) ? 0f : (float)match / union * 100f;
-        Debug.Log("Match Score: " + Mathf.RoundToInt(score) + "%");
+        Debug.Log("Match Score: " + Mathf.RoundToInt(score) + "%" + " Match: " + match + " Union: " + union);
+    }
+
+    public Texture2D GetDrawnTexture()
+    {
+        Texture2D tex = new Texture2D(drawTexture.width, drawTexture.height, TextureFormat.RGBA32, false);
+        RenderTexture.active = drawTexture;
+        tex.ReadPixels(new Rect(0, 0, drawTexture.width, drawTexture.height), 0, 0);
+        tex.Apply();
+        RenderTexture.active = null;
+        return tex;
+    }
+
+    float timer = 0;
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= 5.0f)
+        {
+            timer = 0;
+            Compare();
+        }
     }
 }
 
