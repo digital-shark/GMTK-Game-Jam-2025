@@ -435,11 +435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 1613809438}
-  points:
-  - {x: -5, y: 5, z: 0}
-  - {x: 5, y: 5, z: 0}
-  - {x: 5, y: -5, z: 0}
-  - {x: -5, y: -5, z: 0}
   minDistance: 0.1
 --- !u!120 &1613809438
 LineRenderer:
@@ -465,7 +460,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
