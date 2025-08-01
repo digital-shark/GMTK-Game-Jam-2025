@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{071bf033-2274-487b-b0b5-1effd4a4ba1e}">
+		<property name="assetPath">
+			<value>Smoke 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.4546875000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4a4922cb-a183-497f-8f87-229724d63119}</destination>
+		</relationship>
+	</object>
+</objects>
