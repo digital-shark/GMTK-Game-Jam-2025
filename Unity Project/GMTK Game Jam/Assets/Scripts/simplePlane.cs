@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using FMODUnity;
 public class simplePlane : MonoBehaviour
 {
 
@@ -28,6 +28,10 @@ public class simplePlane : MonoBehaviour
     private Rigidbody rb;
     private Vector3 localVelocity;
 
+    public EventReference clip;
+
+    private bool once = true;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +45,13 @@ public class simplePlane : MonoBehaviour
         if (targetThrust == 0 && currentSpeed < 1) 
         {
             rb.linearVelocity = Vector3.zero;
+
+        }
+
+        if (once) 
+        {
+            AudioManager.instance.PlayOneshot(clip, transform.position);
+            once = false;
         }
 
         updateThrust();
