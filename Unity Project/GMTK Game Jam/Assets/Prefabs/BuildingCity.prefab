@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3552171720069765177}
   - component: {fileID: 7868980860789506887}
   - component: {fileID: 6402524289031535961}
+  - component: {fileID: 4857545058477402245}
   m_Layer: 0
   m_Name: BuildingCity
   m_TagString: Untagged
@@ -89,3 +90,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4857545058477402245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883815815076630575}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 43.8704, y: 31.478107, z: 38.023476}
+  m_Center: {x: -0.0000009536743, y: -0.10111618, z: -3.7905169}
