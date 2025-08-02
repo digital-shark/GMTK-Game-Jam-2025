@@ -38,6 +38,8 @@ public class simplePlane : MonoBehaviour
 
     public Interactable engineButton;
     public Interactable brakeLever;
+    public Interactable smokeLever;
+    public SliderDial smokeAmount;
 
     bool once = true;
 
@@ -67,6 +69,7 @@ public class simplePlane : MonoBehaviour
         }
 
         updateBrake();
+        updateSmokeTrail();
 
         if (engineButton.buttonState == Interactable.STATE.DOWN)
         {
@@ -79,18 +82,6 @@ public class simplePlane : MonoBehaviour
             updatePitch();
             updateRoll();
 
-            if (smokeTrailInput)
-            {
-                if (amountOfSmoke > 0)
-                {
-                    amountOfSmoke -= smokeDrainRate * Time.deltaTime;
-                }
-                else
-                {
-                    amountOfSmoke = 0;
-                    FindAnyObjectByType<GameManager>().ShowScoreScreen();
-                }
-            }
         }
         else if (engineButton.buttonState == Interactable.STATE.UP && !once) 
         {
@@ -99,6 +90,30 @@ public class simplePlane : MonoBehaviour
             EngineAudio.setParameterByName("RPM Pitch", targetThrust * 100f);
             EngineAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+    }
+
+    void updateSmokeTrail()
+    {
+        if (smokeLever.buttonState == Interactable.STATE.DOWN)
+        {
+            if (amountOfSmoke > 0)
+            {
+                amountOfSmoke -= smokeDrainRate * Time.deltaTime;
+            }
+            else
+            {
+                amountOfSmoke = 0;
+                FindAnyObjectByType<GameManager>().ShowScoreScreen();
+            }
+            smokePS.Play();
+        }
+        else 
+        {
+            smokePS.Stop();
+        }
+
+        smokeAmount.sliderValue = amountOfSmoke / 100.0f;
+
     }
 
     void updateBrake() 
