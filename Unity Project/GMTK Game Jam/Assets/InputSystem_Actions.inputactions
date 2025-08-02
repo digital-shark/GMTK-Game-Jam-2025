@@ -240,8 +240,52 @@
         {
             "name": "UI",
             "id": "d6eb8e7a-b1ba-4654-ac4a-1026ba718f8b",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "93092555-a1b2-41d2-a922-70955c0576da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "31f91dff-baed-485e-9665-d3e6e6565957",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f442906b-c2cf-4272-ab0b-574be64c261b",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0693bef5-b9b5-4212-a4d6-1b3af730d146",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
