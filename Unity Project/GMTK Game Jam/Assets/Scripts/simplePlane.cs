@@ -4,7 +4,6 @@ using FMOD.Studio;
 public class simplePlane : MonoBehaviour
 {
 
-
     public float angleOfAttack;
     public float maxSpeed;
     public float currentSpeed;
@@ -39,7 +38,11 @@ public class simplePlane : MonoBehaviour
     public Interactable engineButton;
     public Interactable brakeLever;
     public Interactable smokeLever;
+    public Interactable RadioTransmitter;
+
     public SliderDial smokeAmount;
+    public rotatingDial angleThousandHand;
+    public rotatingDial angleHundredHand;
 
     bool once = true;
 
@@ -70,6 +73,7 @@ public class simplePlane : MonoBehaviour
 
         updateBrake();
         updateSmokeTrail();
+        updateAltimeter();
 
         if (engineButton.buttonState == Interactable.STATE.DOWN)
         {
@@ -90,6 +94,21 @@ public class simplePlane : MonoBehaviour
             EngineAudio.setParameterByName("RPM Pitch", targetThrust * 100f);
             EngineAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+
+        if (RadioTransmitter.buttonState == Interactable.STATE.HELD) 
+        {
+            FindAnyObjectByType<GameManager>().ShowScoreScreen();
+        }
+    }
+
+    void updateAltimeter() 
+    {
+        float currentAltitude = transform.position.y * 10;
+
+        angleHundredHand.sliderValue = currentAltitude % 1000/1000;
+        angleThousandHand.sliderValue = Mathf.Clamp(currentAltitude, 0, 10000) / 10000;
+
+
     }
 
     void updateSmokeTrail()

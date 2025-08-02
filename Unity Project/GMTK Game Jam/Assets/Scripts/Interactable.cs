@@ -24,6 +24,12 @@ public class Interactable : MonoBehaviour
     public Vector3 Held;
     public Vector3 Down;
 
+    public bool usePosition;
+
+    public Vector3 UpPos;
+    public Vector3 HeldPos;
+    public Vector3 DownPos;
+
     public delegate void timerDone();
     public event timerDone buttonTimerFinished;
 
@@ -43,6 +49,8 @@ public class Interactable : MonoBehaviour
     private void FixedUpdate()
     {
         switchTargetRotation(buttonState);
+        if (usePosition)
+            switchTargetPosition(buttonState);
 
         if (interacting)
         {
@@ -98,6 +106,24 @@ public class Interactable : MonoBehaviour
                 break;
             case STATE.DOWN:
                 transform.localRotation = Quaternion.Euler(Down);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void switchTargetPosition(STATE state)
+    {
+        switch (state)
+        {
+            case STATE.UP:
+                transform.localPosition = UpPos;
+                break;
+            case STATE.HELD:
+                transform.localPosition = skipHeldPosition ? UpPos : HeldPos;
+                break;
+            case STATE.DOWN:
+                transform.localPosition = DownPos;
                 break;
             default:
                 break;
