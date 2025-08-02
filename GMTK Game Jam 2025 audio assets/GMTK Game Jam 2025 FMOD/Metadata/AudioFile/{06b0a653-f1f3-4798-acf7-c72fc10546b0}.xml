@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{06b0a653-f1f3-4798-acf7-c72fc10546b0}">
 		<property name="assetPath">
-			<value>idle.wav</value>
+			<value>sfx/idle.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

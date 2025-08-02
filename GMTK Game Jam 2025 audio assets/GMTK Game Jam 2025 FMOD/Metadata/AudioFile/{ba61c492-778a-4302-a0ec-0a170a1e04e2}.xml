@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ba61c492-778a-4302-a0ec-0a170a1e04e2}">
 		<property name="assetPath">
-			<value>Vehicles, Jalopy, Renault R4 GTL, Attempting To Start Engine, Fail, Interior (40) SND96313.wav</value>
+			<value>sfx/Vehicles, Jalopy, Renault R4 GTL, Attempting To Start Engine, Fail, Interior (40) SND96313.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

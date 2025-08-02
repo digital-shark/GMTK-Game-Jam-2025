@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{aad9966e-0b09-45f0-829b-30518f35a869}">
+		<property name="name">
+			<value>Pass Fail</value>
+		</property>
+		<relationship name="folder">
+			<destination>{75be2395-c11f-4f61-90f3-89662923c890}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f6d2c19f-d076-4c24-bb68-c9fad74228ae}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f6d2c19f-d076-4c24-bb68-c9fad74228ae}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Pass</value>
+			<value>Fail</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

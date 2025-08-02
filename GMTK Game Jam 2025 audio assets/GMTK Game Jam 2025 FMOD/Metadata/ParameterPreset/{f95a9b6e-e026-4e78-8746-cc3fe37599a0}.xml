@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f95a9b6e-e026-4e78-8746-cc3fe37599a0}">
+		<property name="name">
+			<value>Smoke Level</value>
+		</property>
+		<relationship name="folder">
+			<destination>{75be2395-c11f-4f61-90f3-89662923c890}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ee9e0fc5-86d7-4e15-b1a7-cc8926c38948}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ee9e0fc5-86d7-4e15-b1a7-cc8926c38948}">
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
