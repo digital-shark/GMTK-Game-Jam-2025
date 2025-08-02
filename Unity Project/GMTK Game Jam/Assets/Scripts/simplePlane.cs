@@ -1,5 +1,6 @@
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 public class simplePlane : MonoBehaviour
 {
 
@@ -29,6 +30,7 @@ public class simplePlane : MonoBehaviour
     private Vector3 localVelocity;
 
     public EventReference clip;
+    private EventInstance EngineAudio;
     
     public float smokeDrainRate = 0.5f;
     public float amountOfSmoke = 100.0f;
@@ -36,13 +38,22 @@ public class simplePlane : MonoBehaviour
 
     public Interactable engineButton;
 
-    private bool once = true;
+    bool once = true;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        EngineAudio = AudioManager.instance.createInstance(clip);
+        EngineAudio.setParameterByName("RPM Pitch", 0);
+
+        engineButton.buttonTimerFinished += startEngine;
+    }
+
+    void startEngine() 
+    {
+        EngineAudio.start();
     }
 
     // Update is called once per frame
@@ -56,6 +67,8 @@ public class simplePlane : MonoBehaviour
 
         if (engineButton.buttonState == Interactable.STATE.DOWN)
         {
+            once = false;
+
             updateThrust();
             //updateLift();
             updateHeavyNose();
@@ -74,6 +87,12 @@ public class simplePlane : MonoBehaviour
                     FindAnyObjectByType<GameManager>().ShowScoreScreen();
                 }
             }
+        }
+        else if (engineButton.buttonState == Interactable.STATE.UP && !once) 
+        {
+            targetThrust = 0;
+            once = true;
+            EngineAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 
@@ -114,6 +133,8 @@ public class simplePlane : MonoBehaviour
         float enginepower = enginePowerCurve.Evaluate(currentSpeed / maxSpeed);
 
         rb.AddRelativeForce(Vector3.forward * enginetorque * targetThrust * enginepower);
+
+        EngineAudio.setParameterByName("RPM Pitch", targetThrust * 100f);
     }
 
     float throttleInput;

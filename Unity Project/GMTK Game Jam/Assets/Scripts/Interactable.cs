@@ -22,6 +22,11 @@ public class Interactable : MonoBehaviour
     public Vector3 Held;
     public Vector3 Down;
 
+    public delegate void timerDone();
+    public event timerDone buttonTimerFinished;
+
+    bool once = true;
+
 
     public void Interact() 
     {
@@ -48,12 +53,18 @@ public class Interactable : MonoBehaviour
             }
 
             timer -= Time.deltaTime;
+            if (timer < 0 && once) 
+            {
+                once = false;
+                buttonTimerFinished.Invoke();
+            }
         }
         else 
         {
             if (!toggle)
             {
                 toggle = true;
+                once = true;
                 switch (oldState)
                 {
                     case STATE.UP:
