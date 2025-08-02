@@ -37,6 +37,7 @@ public class simplePlane : MonoBehaviour
     public ParticleSystem smokePS;
 
     public Interactable engineButton;
+    public Interactable brakeLever;
 
     bool once = true;
 
@@ -65,9 +66,12 @@ public class simplePlane : MonoBehaviour
 
         }
 
+        updateBrake();
+
         if (engineButton.buttonState == Interactable.STATE.DOWN)
         {
             once = false;
+
 
             updateThrust();
             //updateLift();
@@ -92,8 +96,17 @@ public class simplePlane : MonoBehaviour
         {
             targetThrust = 0;
             once = true;
+            EngineAudio.setParameterByName("RPM Pitch", targetThrust * 100f);
             EngineAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
+    }
+
+    void updateBrake() 
+    {
+        if (brakeLever.buttonState == Interactable.STATE.DOWN)
+            rb.linearDamping = 0.03f;
+        else
+            rb.linearDamping = 5;
     }
 
     void updateHeavyNose() 

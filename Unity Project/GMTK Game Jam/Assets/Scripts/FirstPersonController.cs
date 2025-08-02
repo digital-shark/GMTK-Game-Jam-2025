@@ -38,7 +38,7 @@ public class FirstPersonController : MonoBehaviour
 	{
 
 		Debug.DrawRay(transform.position, transform.forward, Color.red, 10);
-		if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3, LayerMask.GetMask("Buttons")) && context.started) ;
+		if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3, LayerMask.GetMask("Buttons")) && context.started) 
 		{
 			lastHit = hit.collider.transform.GetComponent<Interactable>();
 			lastHit.Interact();

@@ -10,13 +10,15 @@ public class Interactable : MonoBehaviour
     }
 
     public STATE buttonState = STATE.UP;
-    STATE oldState = STATE.HELD;
+    STATE oldState = STATE.UP;
 
     public float holdTime;
     public float timer;
 
     public bool interacting;
     bool toggle = true;
+
+    public bool skipHeldPosition;
 
     public Vector3 Up;
     public Vector3 Held;
@@ -56,7 +58,7 @@ public class Interactable : MonoBehaviour
             if (timer < 0 && once) 
             {
                 once = false;
-                buttonTimerFinished.Invoke();
+                buttonTimerFinished?.Invoke();
             }
         }
         else 
@@ -89,13 +91,13 @@ public class Interactable : MonoBehaviour
         switch (state)
         {
             case STATE.UP:
-                transform.rotation = Quaternion.Euler(Up);
+                transform.localRotation = Quaternion.Euler(Up);
                 break;
             case STATE.HELD:
-                transform.rotation = Quaternion.Euler(Held);
+                transform.localRotation = Quaternion.Euler(skipHeldPosition ? Up : Held);
                 break;
             case STATE.DOWN:
-                transform.rotation = Quaternion.Euler(Down);
+                transform.localRotation = Quaternion.Euler(Down);
                 break;
             default:
                 break;
