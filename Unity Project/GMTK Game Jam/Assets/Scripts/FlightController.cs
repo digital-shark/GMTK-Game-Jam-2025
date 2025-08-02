@@ -5,12 +5,14 @@ public class FlightController : MonoBehaviour
 {
     simplePlane plane;
     FirstPersonController cameraController;
+    steeringwheel wheel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         plane = GetComponent<simplePlane>();
         cameraController = GetComponentInChildren<FirstPersonController>();
+        wheel = GetComponentInChildren<steeringwheel>();
     }
 
     Vector3 controlInput;
@@ -72,5 +74,6 @@ public class FlightController : MonoBehaviour
     void Update()
     {
         plane.SetControlInput(controlInput);
+        wheel.currentInput = controlInput;
     }
 }

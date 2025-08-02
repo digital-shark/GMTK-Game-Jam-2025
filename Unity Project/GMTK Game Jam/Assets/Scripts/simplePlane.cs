@@ -41,6 +41,7 @@ public class simplePlane : MonoBehaviour
     public Interactable RadioTransmitter;
 
     public SliderDial smokeAmount;
+    public rotatingDial throttle;
     public rotatingDial angleThousandHand;
     public rotatingDial angleHundredHand;
 
@@ -182,6 +183,7 @@ public class simplePlane : MonoBehaviour
         rb.AddRelativeForce(Vector3.forward * enginetorque * targetThrust * enginepower);
 
         EngineAudio.setParameterByName("RPM Pitch", targetThrust * 100f);
+        throttle.sliderValue = targetThrust;
     }
 
     float throttleInput;
