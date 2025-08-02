@@ -34,6 +34,8 @@ public class simplePlane : MonoBehaviour
     public float amountOfSmoke = 100.0f;
     public ParticleSystem smokePS;
 
+    public Interactable engineButton;
+
     private bool once = true;
 
     
@@ -52,28 +54,25 @@ public class simplePlane : MonoBehaviour
 
         }
 
-        if (once) 
+        if (engineButton.buttonState == Interactable.STATE.DOWN)
         {
-            AudioManager.instance.PlayOneshot(clip, transform.position);
-            once = false;
-        }
+            updateThrust();
+            //updateLift();
+            updateHeavyNose();
+            updatePitch();
+            updateRoll();
 
-        updateThrust();
-        //updateLift();
-        updateHeavyNose();
-        updatePitch();
-        updateRoll();
-
-        if (smokeTrailInput)
-        {
-            if (amountOfSmoke > 0)
+            if (smokeTrailInput)
             {
-                amountOfSmoke -= smokeDrainRate * Time.deltaTime;
-            }
-            else
-            {
-                amountOfSmoke = 0;
-                FindAnyObjectByType<GameManager>().ShowScoreScreen();
+                if (amountOfSmoke > 0)
+                {
+                    amountOfSmoke -= smokeDrainRate * Time.deltaTime;
+                }
+                else
+                {
+                    amountOfSmoke = 0;
+                    FindAnyObjectByType<GameManager>().ShowScoreScreen();
+                }
             }
         }
     }

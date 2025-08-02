@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -29,5 +30,23 @@ public class FirstPersonController : MonoBehaviour
 		var yQuat = Quaternion.AngleAxis(rotation.y, Vector3.left);
 
 		transform.localRotation = xQuat * yQuat; //Quaternions seem to rotate more consistently than EulerAngles. Sensitivity seemed to change slightly at certain degrees using Euler. transform.localEulerAngles = new Vector3(-rotation.y, rotation.x, 0);
+	}
+
+	private Interactable lastHit;
+
+	public void interactWithInteractable(InputAction.CallbackContext context) 
+	{
+
+		Debug.DrawRay(transform.position, transform.forward, Color.red, 10);
+		if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3, LayerMask.GetMask("Buttons")) && context.started) ;
+		{
+			lastHit = hit.collider.transform.GetComponent<Interactable>();
+			lastHit.Interact();
+		}
+
+		if (context.canceled && lastHit != null) 
+		{
+			lastHit.stopInteract();
+		}
 	}
 }
