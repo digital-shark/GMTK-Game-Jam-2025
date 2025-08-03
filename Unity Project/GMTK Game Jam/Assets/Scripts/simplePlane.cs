@@ -74,7 +74,14 @@ public class simplePlane : MonoBehaviour
     bool once = true;
     bool onceTwo = true;
 
-    
+    private void OnDestroy()
+    {
+        EngineAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        SmokeEmitter.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        EngineStartAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

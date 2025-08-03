@@ -76,6 +76,8 @@ public class GameManager : MonoBehaviour
     {
         if (activeMission < missionTextures.Length - 1)
         {
+            FindFirstObjectByType<dialogue>().text.text = string.Empty;
+
             activeMission++;
             finalScoreScreen.SetActive(false);
             imageComparer.referenceTexture = missionTextures[activeMission];

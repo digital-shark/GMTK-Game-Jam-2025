@@ -24,8 +24,18 @@ public class FirstPersonController : MonoBehaviour
 		hb = FindFirstObjectByType<HoverButton>();
     }
 
+	bool lockcamera;
+
+	public void finalScreen() 
+	{
+		transform.localRotation = Quaternion.Euler(0, 0, 0);
+		lockcamera = true;
+	}
     void Update()
 	{
+		if (lockcamera)
+			return;
+
 		rotation.x += mouseinput.x * sensitivity;
 		rotation.y += mouseinput.y * sensitivity;
 		rotation.y = Mathf.Clamp(rotation.y, -yRotationLimit, yRotationLimit);

@@ -41,6 +41,14 @@ public class radio : MonoBehaviour
 
     bool toggleone = true, toggleTwo = true, toggleThree = true, toggleFour = true;
 
+    private void OnDestroy()
+    {
+        foreach (var item in instances)
+        {
+            item.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
