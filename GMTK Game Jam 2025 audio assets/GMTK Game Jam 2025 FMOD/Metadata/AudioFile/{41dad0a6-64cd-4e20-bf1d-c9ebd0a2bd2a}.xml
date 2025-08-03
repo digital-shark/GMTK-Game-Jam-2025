@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{41dad0a6-64cd-4e20-bf1d-c9ebd0a2bd2a}">
+		<property name="assetPath">
+			<value>acoustic stems/guitar verse_bip.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>39.066562500000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4a4922cb-a183-497f-8f87-229724d63119}</destination>
+		</relationship>
+	</object>
+</objects>

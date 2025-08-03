@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{12db1687-8285-445e-9300-bcc3741e2035}">
+		<property name="assetPath">
+			<value>indie rock stems/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4a4922cb-a183-497f-8f87-229724d63119}</destination>
+		</relationship>
+	</object>
+</objects>
