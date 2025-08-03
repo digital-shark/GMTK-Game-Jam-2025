@@ -10,7 +10,7 @@ public class dialogue : MonoBehaviour
     public float textspeed;
 
 
-    private int index;
+    public int index;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

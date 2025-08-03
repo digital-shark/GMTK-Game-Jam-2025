@@ -14,6 +14,7 @@ public class simplePlane : MonoBehaviour
         RELEASEDBREAK,
         THROTTLEUP,
         FLYING,
+        FLYTOBALLOON,
         RELEASESMOKE
     }
 
@@ -121,7 +122,7 @@ public class simplePlane : MonoBehaviour
 
     }
 
-    void updateTutorial() 
+    void updateTutorial()
     {
         if (RadioTransmitter.buttonState == Interactable.STATE.HELD && TUTORIAL == TutorialState.START)
         {
@@ -135,7 +136,7 @@ public class simplePlane : MonoBehaviour
             TUTORIAL = TutorialState.CLICKEDRADIO2;
         }
 
-        if (engineButton.buttonState == Interactable.STATE.DOWN && TUTORIAL == TutorialState.CLICKEDRADIO2) 
+        if (engineButton.buttonState == Interactable.STATE.DOWN && TUTORIAL == TutorialState.CLICKEDRADIO2)
         {
             dialogueSystem.nextLine();
             TUTORIAL = TutorialState.STARTEDENGINE;
@@ -156,13 +157,19 @@ public class simplePlane : MonoBehaviour
         if (transform.position.y > 30 && TUTORIAL == TutorialState.THROTTLEUP)
         {
             dialogueSystem.nextLine();
-            TUTORIAL = TutorialState.FLYING;
+            TUTORIAL = TutorialState.RELEASESMOKE;
         }
 
-        if (transform.position.y > 30 && TUTORIAL == TutorialState.FLYING)
+        if (smokeLever.buttonState == Interactable.STATE.DOWN && TUTORIAL == TutorialState.RELEASESMOKE)
         {
             dialogueSystem.nextLine();
-            TUTORIAL = TutorialState.RELEASESMOKE;
+            TUTORIAL = TutorialState.FLYTOBALLOON;
+        }
+
+        if (RadioTransmitter.buttonState == Interactable.STATE.HELD && TUTORIAL == TutorialState.FLYTOBALLOON) 
+        {
+            dialogueSystem.nextLine();
+            finishedTutorial = true;
         }
     }
 
@@ -212,7 +219,7 @@ public class simplePlane : MonoBehaviour
     void updateBrake() 
     {
         if (brakeLever.buttonState == Interactable.STATE.DOWN)
-            rb.linearDamping = 0.03f;
+            rb.linearDamping = 0.05f;
         else
             rb.linearDamping = 5;
     }
