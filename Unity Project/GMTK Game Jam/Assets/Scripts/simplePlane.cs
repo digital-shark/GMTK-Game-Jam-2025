@@ -83,6 +83,7 @@ public class simplePlane : MonoBehaviour
         EngineAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SmokeEmitter.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         EngineStartAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        CrashAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
 

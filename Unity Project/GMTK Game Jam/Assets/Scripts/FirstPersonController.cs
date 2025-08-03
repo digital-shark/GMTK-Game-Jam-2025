@@ -29,6 +29,7 @@ public class FirstPersonController : MonoBehaviour
 	public void finalScreen() 
 	{
 		transform.localRotation = Quaternion.Euler(0, 0, 0);
+		hb.deactivate();
 		lockcamera = true;
 	}
     void Update()
