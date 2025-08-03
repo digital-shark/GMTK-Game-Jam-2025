@@ -14488,6 +14488,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7616596743118580216, guid: d5907bc893db4224a86b3dffb61b2d4d, type: 3}
+      propertyPath: index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7616596743118580216, guid: d5907bc893db4224a86b3dffb61b2d4d, type: 3}
+      propertyPath: 'lines.Array.data[0]'
+      value: ' Can you hear me? Can you call in? There should be a Radio Transmitter
+        taped somewhere in your cockpit'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
