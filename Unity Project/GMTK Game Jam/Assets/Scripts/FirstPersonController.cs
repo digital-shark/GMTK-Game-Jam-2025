@@ -15,10 +15,13 @@ public class FirstPersonController : MonoBehaviour
 	Vector2 rotation = Vector2.zero;
 	public Vector2 mouseinput = Vector2.zero;
 
+	HoverButton hb;
+
     private void Start()
     {
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
+		hb = FindFirstObjectByType<HoverButton>();
     }
 
     void Update()
@@ -30,6 +33,16 @@ public class FirstPersonController : MonoBehaviour
 		var yQuat = Quaternion.AngleAxis(rotation.y, Vector3.left);
 
 		transform.localRotation = xQuat * yQuat; //Quaternions seem to rotate more consistently than EulerAngles. Sensitivity seemed to change slightly at certain degrees using Euler. transform.localEulerAngles = new Vector3(-rotation.y, rotation.x, 0);
+
+		if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 3, LayerMask.GetMask("Buttons")))
+		{
+			Interactable interact = hit.collider.transform.GetComponent<Interactable>();
+			hb.activate(interact.hint);
+		}
+		else 
+		{
+			hb.deactivate();
+		}
 	}
 
 	private Interactable lastHit;

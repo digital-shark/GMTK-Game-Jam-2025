@@ -71,8 +71,15 @@ public class simplePlane : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         dialogueSystem = FindFirstObjectByType<dialogue>();
+
+        if (!FindFirstObjectByType<GameManager>().playTutorial)
+            finishedTutorial = true;
+        else
+            dialogueSystem.startDialogue();
+
+        rb = GetComponent<Rigidbody>();
+
         EngineAudio = AudioManager.instance.createInstance(clip);
         EngineAudio.setParameterByName("RPM Pitch", 0);
 
@@ -124,6 +131,9 @@ public class simplePlane : MonoBehaviour
 
     void updateTutorial()
     {
+        if (finishedTutorial)
+            return;
+
         if (RadioTransmitter.buttonState == Interactable.STATE.HELD && TUTORIAL == TutorialState.START)
         {
             dialogueSystem.nextLine();
@@ -170,6 +180,7 @@ public class simplePlane : MonoBehaviour
         {
             dialogueSystem.nextLine();
             finishedTutorial = true;
+            FindAnyObjectByType<GameManager>().playTutorial = false;
         }
     }
 

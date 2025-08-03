@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public Texture2D[] missionTextures;
     public int activeMission;
 
+    public bool playTutorial = true;
+
     private void Awake()
     {
         // Only make one as singleton and don't destroy it to keep values between scene changes

@@ -17,7 +17,6 @@ public class dialogue : MonoBehaviour
     void Start()
     {
         text.text = string.Empty;
-        startDialogue();
     }
 
     // Update is called once per frame
@@ -26,7 +25,7 @@ public class dialogue : MonoBehaviour
         
     }
 
-    void startDialogue() 
+    public void startDialogue() 
     {
         index = 0;
         StartCoroutine(TypeLine());

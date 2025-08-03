@@ -5272,6 +5272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc0a023ed2d8d248bbcb33afaf71ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hint: Task
   buttonState: 2
   holdTime: 0
   timer: 0
@@ -6180,6 +6181,7 @@ Transform:
   - {fileID: 8121924960357690841}
   - {fileID: 6064574694196147433}
   - {fileID: 1604866301638304419}
+  - {fileID: 521716946751187019}
   - {fileID: 4400198839660931889}
   - {fileID: 4198049884233551879}
   m_Father: {fileID: 0}
@@ -6681,6 +6683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc0a023ed2d8d248bbcb33afaf71ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hint: Radio transmitter
   buttonState: 0
   holdTime: 99999
   timer: 0
@@ -7378,6 +7381,68 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -0.4, z: -3.1}
+--- !u!1001 &51575556341927840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 644358333500760774}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4656
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4292
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0406
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.71415144
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5279047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.33856747
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.31092834
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 74.698
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 36.047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -19.165
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+      propertyPath: m_Name
+      value: LeverBlock
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+--- !u!4 &521716946751187019 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46edb9c48acc94e44925d602079cf2f0, type: 3}
+  m_PrefabInstance: {fileID: 51575556341927840}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3336614227464905511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7483,6 +7548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc0a023ed2d8d248bbcb33afaf71ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hint: Brake lever
   buttonState: 0
   holdTime: 0
   timer: 0
@@ -7893,6 +7959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc0a023ed2d8d248bbcb33afaf71ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hint: Start Engine
   buttonState: 0
   holdTime: 1.5
   timer: 0
@@ -8036,6 +8103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc0a023ed2d8d248bbcb33afaf71ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hint: Smoke lever
   buttonState: 0
   holdTime: 0
   timer: 0
