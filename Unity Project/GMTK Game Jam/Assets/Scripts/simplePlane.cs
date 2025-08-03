@@ -2,6 +2,7 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class simplePlane : MonoBehaviour
 {
 
@@ -192,7 +193,7 @@ public class simplePlane : MonoBehaviour
         yield return new WaitForSeconds(5);
         CrashAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-        FindFirstObjectByType<GameManager>().ShowScoreScreen();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         FindAnyObjectByType<Fader>().Fade();
     }
 
