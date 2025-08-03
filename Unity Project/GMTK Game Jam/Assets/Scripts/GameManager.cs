@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowScoreScreen()
     {
-        FindFirstObjectByType<dialogue>().gameObject.SetActive(false);
+        playTutorial = false;
         FindFirstObjectByType<FirstPersonController>().finalScreen();
         // Only show score screen if not already active
         if (finalScoreScreen.activeSelf)
