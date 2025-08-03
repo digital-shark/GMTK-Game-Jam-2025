@@ -4,6 +4,19 @@ using FMOD.Studio;
 public class simplePlane : MonoBehaviour
 {
 
+    enum TutorialState 
+    {
+        START,
+        CLICKEDRADIO,
+        CLICKEDRADIO2,
+        LOOKEDATTASK,
+        STARTEDENGINE,
+        RELEASEDBREAK,
+        THROTTLEUP,
+        FLYING,
+        RELEASESMOKE
+    }
+
     public float angleOfAttack;
     public float maxSpeed;
     public float currentSpeed;
@@ -39,11 +52,17 @@ public class simplePlane : MonoBehaviour
     public Interactable brakeLever;
     public Interactable smokeLever;
     public Interactable RadioTransmitter;
+    public Interactable paper;
 
     public SliderDial smokeAmount;
     public rotatingDial throttle;
     public rotatingDial angleThousandHand;
     public rotatingDial angleHundredHand;
+
+    public dialogue dialogueSystem;
+    public bool finishedTutorial;
+
+    TutorialState TUTORIAL = TutorialState.START;
 
     bool once = true;
 
@@ -52,6 +71,7 @@ public class simplePlane : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        dialogueSystem = FindFirstObjectByType<dialogue>();
         EngineAudio = AudioManager.instance.createInstance(clip);
         EngineAudio.setParameterByName("RPM Pitch", 0);
 
@@ -75,6 +95,8 @@ public class simplePlane : MonoBehaviour
         updateBrake();
         updateSmokeTrail();
         updateAltimeter();
+        updateRadioTransmitter();
+        updateTutorial();
 
         if (engineButton.buttonState == Interactable.STATE.DOWN)
         {
@@ -96,9 +118,60 @@ public class simplePlane : MonoBehaviour
             EngineAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
 
-        if (RadioTransmitter.buttonState == Interactable.STATE.HELD) 
+
+    }
+
+    void updateTutorial() 
+    {
+        if (RadioTransmitter.buttonState == Interactable.STATE.HELD && TUTORIAL == TutorialState.START)
         {
-            FindAnyObjectByType<GameManager>().ShowScoreScreen();
+            dialogueSystem.nextLine();
+            TUTORIAL = TutorialState.CLICKEDRADIO;
+        }
+
+        if (paper.buttonState == Interactable.STATE.UP && TUTORIAL == TutorialState.CLICKEDRADIO)
+        {
+            dialogueSystem.nextLine();
+            TUTORIAL = TutorialState.CLICKEDRADIO2;
+        }
+
+        if (engineButton.buttonState == Interactable.STATE.DOWN && TUTORIAL == TutorialState.CLICKEDRADIO2) 
+        {
+            dialogueSystem.nextLine();
+            TUTORIAL = TutorialState.STARTEDENGINE;
+        }
+
+        if (brakeLever.buttonState == Interactable.STATE.DOWN && TUTORIAL == TutorialState.STARTEDENGINE)
+        {
+            dialogueSystem.nextLine();
+            TUTORIAL = TutorialState.RELEASEDBREAK;
+        }
+
+        if (targetThrust == 1 && TUTORIAL == TutorialState.RELEASEDBREAK)
+        {
+            dialogueSystem.nextLine();
+            TUTORIAL = TutorialState.THROTTLEUP;
+        }
+
+        if (transform.position.y > 30 && TUTORIAL == TutorialState.THROTTLEUP)
+        {
+            dialogueSystem.nextLine();
+            TUTORIAL = TutorialState.FLYING;
+        }
+
+        if (transform.position.y > 30 && TUTORIAL == TutorialState.FLYING)
+        {
+            dialogueSystem.nextLine();
+            TUTORIAL = TutorialState.RELEASESMOKE;
+        }
+    }
+
+    void updateRadioTransmitter() 
+    {
+        if (RadioTransmitter.buttonState == Interactable.STATE.HELD)
+        {
+            if(finishedTutorial)
+                FindAnyObjectByType<GameManager>().ShowScoreScreen();
         }
     }
 
