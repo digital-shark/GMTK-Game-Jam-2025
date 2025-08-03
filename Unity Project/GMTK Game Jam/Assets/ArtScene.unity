@@ -3899,63 +3899,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2119656558377162304, guid: 569c007ea1e2a8a41ac9e17a78959658, type: 3}
   m_PrefabInstance: {fileID: 1953714939}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &559853975
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 579713859668363375, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_Name
-      value: Audiomanager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 553.95844
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.51565
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 110.2428
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378974641014053415, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
 --- !u!1001 &568419935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6356,6 +6299,26 @@ PrefabInstance:
     - target: {fileID: 644358333500760774, guid: e97fcba4144b3aa4681af0fa94f2fa56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536431183223670102, guid: e97fcba4144b3aa4681af0fa94f2fa56, type: 3}
+      propertyPath: Smoke.Path
+      value: event:/smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536431183223670102, guid: e97fcba4144b3aa4681af0fa94f2fa56, type: 3}
+      propertyPath: Smoke.Guid.Data1
+      value: 1170486651
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536431183223670102, guid: e97fcba4144b3aa4681af0fa94f2fa56, type: 3}
+      propertyPath: Smoke.Guid.Data2
+      value: 1255284307
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536431183223670102, guid: e97fcba4144b3aa4681af0fa94f2fa56, type: 3}
+      propertyPath: Smoke.Guid.Data3
+      value: 174583699
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536431183223670102, guid: e97fcba4144b3aa4681af0fa94f2fa56, type: 3}
+      propertyPath: Smoke.Guid.Data4
+      value: -815131336
       objectReference: {fileID: 0}
     - target: {fileID: 7101444810041042264, guid: e97fcba4144b3aa4681af0fa94f2fa56, type: 3}
       propertyPath: m_Name
@@ -14404,10 +14367,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
-    - target: {fileID: 4101796121041208944, guid: d5907bc893db4224a86b3dffb61b2d4d, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7255415462472577185, guid: d5907bc893db4224a86b3dffb61b2d4d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14488,15 +14447,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7616596743118580216, guid: d5907bc893db4224a86b3dffb61b2d4d, type: 3}
-      propertyPath: index
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7616596743118580216, guid: d5907bc893db4224a86b3dffb61b2d4d, type: 3}
-      propertyPath: 'lines.Array.data[0]'
-      value: ' Can you hear me? Can you call in? There should be a Radio Transmitter
-        taped somewhere in your cockpit'
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14542,4 +14492,3 @@ SceneRoots:
   - {fileID: 110270620}
   - {fileID: 316582769}
   - {fileID: 7899841}
-  - {fileID: 559853975}

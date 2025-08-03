@@ -6859,6 +6859,13 @@ MonoBehaviour:
       Data3: -554468982
       Data4: 1205283094
     Path: event:/engine Start
+  Smoke:
+    Guid:
+      Data1: 1170486651
+      Data2: 1255284307
+      Data3: 174583699
+      Data4: -815131336
+    Path: event:/smoke
   smokeDrainRate: 0.5
   amountOfSmoke: 100
   smokePS: {fileID: 5660049502929573728}
