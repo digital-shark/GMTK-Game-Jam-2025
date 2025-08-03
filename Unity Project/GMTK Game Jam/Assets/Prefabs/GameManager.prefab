@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Final Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 49d31c88182edb24da1f9260fcb3e2f8, type: 2}
+  m_sharedMaterial: {fileID: -4728764418369115943, guid: 49d31c88182edb24da1f9260fcb3e2f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -507,8 +507,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100.00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 49d31c88182edb24da1f9260fcb3e2f8, type: 2}
+  m_sharedMaterial: {fileID: -4728764418369115943, guid: 49d31c88182edb24da1f9260fcb3e2f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -632,6 +632,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 25c0c6e32668cb140b01f3186cb4e5fa, type: 3}
   - {fileID: 2800000, guid: 8745b59a264f8db4283a8fd5583ed90f, type: 3}
   activeMission: 0
+  playTutorial: 1
 --- !u!1 &6124903574838814283
 GameObject:
   m_ObjectHideFlags: 0
