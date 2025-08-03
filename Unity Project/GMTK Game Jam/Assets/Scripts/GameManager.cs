@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             return;
 
         imageComparer.Compare();
-        scoreText.text = imageComparer.score.ToString();
+        scoreText.text = imageComparer.score.ToString("F2");
         finalScoreScreen.SetActive(true);
 
         if (activeMission >= missionTextures.Length - 1)
