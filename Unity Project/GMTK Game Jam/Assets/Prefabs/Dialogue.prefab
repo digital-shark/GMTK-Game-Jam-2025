@@ -51,28 +51,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 4101796121041208944}
   lines:
-  - ' Can you hear me? Can you call in? There should be a Radio Transmitter taped
-    somewhere in your cockpit'
-  - "Great! welcome to our Skywriter Academy. You\u2019ll be drawing a few figures
-    in the sky today. There should be a document on your right hand showing our first
-    exercise"
-  - "We\u2019ll be doing a loop first. Once you\u2019re ready feel put the document
+  - Can you hear me? Can you call in? There should be a Radio Transmitter taped somewhere
+    in your cockpit.
+  - "Great! welcome to Skywriter Academy. You\u2019ll be drawing a few figures in
+    the sky today. There should be a document on your right hand showing our first
+    exercise."
+  - "You\u2019ll be doing a loop first. Once you\u2019re ready, put the document
     away and start the engine."
-  - Looks like you got the hang of it, we see the propellor spinning. Feel free to
-    release the brakes next.
+  - Looks like you got the hang of it, we can see the propellor spinning. Feel free
+    to release the brakes next.
   - Good! Everything should be ready. Use [SHIFT] to throttle up and [CTRL] to throttle
-    down
+    down.
   - We can see you moving! Use [S] to pull back and start gaining altitude.
   - "Congratulations, you\u2019re in the air! You can use [WASD] to manoeuvre your
-    plane around.  there should be a lever behind you, on your left. flip it and
-    you\u2019ll start producing smoke behind the plane.  "
-  - "We can see the smoke! We\u2019ve put up a big red balloon near the city. Try
-    approaching it from the east so that you\u2019re lined up with the base"
+    plane around. There should be a lever behind you, on your left. Flip it and you\u2019ll
+    start producing smoke behind the plane.  "
+  - "We can see the smoke! We\u2019ve put up a big yellow balloon near the city.
+    Try approaching it from the east so that you\u2019re lined up correctly."
   - You should be all lined up, Now carefully time your loop. There should be a screen
-    down at your feet with what we see here at the base, it should help you correctly
-    fly the shape
-  - "It looks like you\u2019re done. To look at how well you did just call in over
-    the radio again"
+    down at your feet with what we see here at the base, it should help you draw
+    the shape.
+  - "It looks like you\u2019re done! To look at how well you did just call in over
+    the radio again."
   textspeed: 0.03
   walkie:
     Guid:

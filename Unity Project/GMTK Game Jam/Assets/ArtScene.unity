@@ -2499,6 +2499,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1898596375521354618, guid: 49c04602622841444ade5a4f59dfb1ad, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4711208715938537054, guid: 7a3c87c3c786d3840877b21264a01f94, type: 3}
     - target: {fileID: 3992514870766634380, guid: 49c04602622841444ade5a4f59dfb1ad, type: 3}
       propertyPath: m_Name
       value: Balloon
