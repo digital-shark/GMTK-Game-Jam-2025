@@ -66,7 +66,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.2
   far clip plane: 1000
   field of view: 43.2
   orthographic: 0
@@ -5314,7 +5314,7 @@ MonoBehaviour:
   Held: {x: 0, y: 0, z: 0}
   Down: {x: 0.00000085377366, y: 352.60773, z: 90}
   usePosition: 1
-  UpPos: {x: 0.012, y: 0.433, z: 0.59}
+  UpPos: {x: 0.012, y: 0.433, z: 0.654}
   HeldPos: {x: 0, y: 0, z: 0}
   DownPos: {x: 0.5415, y: 0.2491, z: 0.3828}
 --- !u!135 &7161376370037655881

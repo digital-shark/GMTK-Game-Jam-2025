@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public int activeMission;
 
     public bool playTutorial = true;
+    [SerializeField]
+    float timeBeforeSkippingScoreScreen = 3.0f;
+    float timeBeforeSkippingScoreScreenTimer;
 
     private void Awake()
     {
@@ -45,7 +48,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (finalScoreScreen.activeSelf && Input.GetMouseButtonDown(0))
+        timeBeforeSkippingScoreScreenTimer += Time.deltaTime;
+        if (finalScoreScreen.activeSelf && timeBeforeSkippingScoreScreenTimer > timeBeforeSkippingScoreScreen && Input.GetMouseButtonDown(0))
         {
             NextMission();
         }
@@ -65,6 +69,7 @@ public class GameManager : MonoBehaviour
         {
             thanksForPlayingText.gameObject.SetActive(true);
         }
+        timeBeforeSkippingScoreScreenTimer = 0;
     }
 
     public void NextMission()
