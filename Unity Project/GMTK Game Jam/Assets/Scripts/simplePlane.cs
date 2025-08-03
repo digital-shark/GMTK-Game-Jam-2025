@@ -45,6 +45,8 @@ public class simplePlane : MonoBehaviour
 
     public EventReference clip;
     public EventReference engineStart;
+    public EventReference Smoke;
+    private EventInstance SmokeEmitter;
     public EventReference CrashSound;
     private EventInstance EngineStartAudio; 
     private EventInstance EngineAudio;
@@ -75,6 +77,15 @@ public class simplePlane : MonoBehaviour
     bool once = true;
     bool onceTwo = true;
 
+    
+    private void OnDestroy()
+    {
+        EngineAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        SmokeEmitter.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        EngineStartAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -89,8 +100,12 @@ public class simplePlane : MonoBehaviour
 
         EngineAudio = AudioManager.instance.createInstance(clip);
         EngineAudio.setParameterByName("RPM Pitch", 0);
+        EngineAudio.setVolume(0.5f);
 
         EngineStartAudio = AudioManager.instance.createInstance(engineStart);
+        EngineStartAudio.setVolume(0.5f);
+
+        SmokeEmitter = AudioManager.instance.createInstance(Smoke);
 
         prop = GetComponentInChildren<spinning>();
 
@@ -254,12 +269,19 @@ public class simplePlane : MonoBehaviour
 
     }
 
+    bool onceSmoke = true;
+
     void updateSmokeTrail()
     {
         if (smokeLever.buttonState == Interactable.STATE.DOWN)
         {
             if (amountOfSmoke > 0)
             {
+                if (onceSmoke) 
+                {
+                    SmokeEmitter.start();
+                    onceSmoke = false;
+                }
                 amountOfSmoke -= smokeDrainRate * Time.deltaTime;
             }
             else
@@ -271,6 +293,8 @@ public class simplePlane : MonoBehaviour
         }
         else 
         {
+            onceSmoke = true;
+            SmokeEmitter.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             smokePS.Stop();
         }
 
