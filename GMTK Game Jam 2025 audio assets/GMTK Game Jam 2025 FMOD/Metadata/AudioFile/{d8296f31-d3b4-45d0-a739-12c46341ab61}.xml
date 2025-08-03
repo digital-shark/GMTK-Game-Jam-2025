@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d8296f31-d3b4-45d0-a739-12c46341ab61}">
 		<property name="assetPath">
-			<value>low altitude.wav</value>
+			<value>sfx/low altitude.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

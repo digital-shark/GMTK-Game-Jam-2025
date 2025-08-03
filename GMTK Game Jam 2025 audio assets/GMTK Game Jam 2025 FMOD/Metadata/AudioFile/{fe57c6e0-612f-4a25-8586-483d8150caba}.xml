@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{fe57c6e0-612f-4a25-8586-483d8150caba}">
 		<property name="assetPath">
-			<value>gmtk2025 v3.mp3</value>
+			<value>music/gmtk2025 v3.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
