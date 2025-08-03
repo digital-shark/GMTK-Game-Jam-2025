@@ -627,8 +627,10 @@ MonoBehaviour:
   scoreText: {fileID: 4018583926664984264}
   thanksForPlayingText: {fileID: 3705957181164056259}
   missionTextures:
-  - {fileID: 2800000, guid: 8775afd95fdcffe4ca00ebbb18ee66f0, type: 3}
+  - {fileID: 2800000, guid: 9ad218364b76d264d8fd1ca758bcdcb5, type: 3}
   - {fileID: 2800000, guid: a3e17ef8a7e2ec94dbada07a3a8d276c, type: 3}
+  - {fileID: 2800000, guid: 25c0c6e32668cb140b01f3186cb4e5fa, type: 3}
+  - {fileID: 2800000, guid: 8745b59a264f8db4283a8fd5583ed90f, type: 3}
   activeMission: 0
 --- !u!1 &6124903574838814283
 GameObject:
