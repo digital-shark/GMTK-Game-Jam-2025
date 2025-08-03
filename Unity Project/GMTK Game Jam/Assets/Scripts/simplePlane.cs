@@ -92,7 +92,9 @@ public class simplePlane : MonoBehaviour
     {
         dialogueSystem = FindFirstObjectByType<dialogue>();
 
-        if (!FindFirstObjectByType<GameManager>().playTutorial)
+        GameManager t = FindFirstObjectByType<GameManager>(FindObjectsInactive.Include);
+
+        if (!t.playTutorial)
             finishedTutorial = true;
         else
             dialogueSystem.startDialogue();
