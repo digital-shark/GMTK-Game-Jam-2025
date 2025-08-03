@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{5ac8ae6f-bf3c-4e9e-b155-8d37c0df62c0}">
 		<property name="name">
-			<value>New Event</value>
+			<value>radio station parameter commands</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -33,6 +33,9 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{27852780-a378-48d9-9ca8-a74996f3f6de}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{fa90e056-264e-405e-96bd-112eea35f93f}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{994d4013-ec4d-4215-9867-4771650d35c3}">
