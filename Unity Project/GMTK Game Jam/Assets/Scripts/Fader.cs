@@ -33,4 +33,13 @@ public class Fader : MonoBehaviour
             blackScreen.color = temp;
         }
     }
+
+    public void ToBlack()
+    {
+        target = 1;
+    }
+    public void Fade()
+    {
+        target = 0;
+    }
 }

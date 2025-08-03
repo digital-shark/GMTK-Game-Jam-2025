@@ -48,16 +48,16 @@ public class ImageComparer : MonoBehaviour
         return tex;
     }
 
-    float timer = 0;
+    //float timer = 0;
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 5.0f)
-        {
-            timer = 0;
-            Compare();
-        }
+        //timer += Time.deltaTime;
+        //if (timer >= 5.0f)
+        //{
+        //    timer = 0;
+        //    Compare();
+        //}
     }
 }
 

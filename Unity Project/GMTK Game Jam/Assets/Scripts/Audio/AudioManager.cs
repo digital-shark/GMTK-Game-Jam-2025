@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     {
         if (instance != null) 
         {
-            Debug.LogError("More than 1 audiomanager not possible");
+            // Don't need more than 1 audiomanager
             Destroy(gameObject);
             return;
         }
