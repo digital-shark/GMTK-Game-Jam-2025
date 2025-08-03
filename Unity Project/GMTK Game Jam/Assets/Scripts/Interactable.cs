@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+
+    public string hint;
+
     public enum STATE 
     {
         UP,
