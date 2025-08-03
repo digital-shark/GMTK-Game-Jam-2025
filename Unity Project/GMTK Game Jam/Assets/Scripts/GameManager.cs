@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     public void ShowScoreScreen()
     {
+        FindFirstObjectByType<dialogue>().gameObject.SetActive(false);
+        FindFirstObjectByType<FirstPersonController>().finalScreen();
         // Only show score screen if not already active
         if (finalScoreScreen.activeSelf)
             return;
@@ -76,8 +78,6 @@ public class GameManager : MonoBehaviour
     {
         if (activeMission < missionTextures.Length - 1)
         {
-            FindFirstObjectByType<dialogue>().text.text = string.Empty;
-
             activeMission++;
             finalScoreScreen.SetActive(false);
             imageComparer.referenceTexture = missionTextures[activeMission];
