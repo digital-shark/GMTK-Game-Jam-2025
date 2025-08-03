@@ -87,9 +87,10 @@ public class simplePlane : MonoBehaviour
 
         EngineAudio = AudioManager.instance.createInstance(clip);
         EngineAudio.setParameterByName("RPM Pitch", 0);
+        EngineAudio.setVolume(0.5f);
 
         EngineStartAudio = AudioManager.instance.createInstance(engineStart);
-
+        EngineStartAudio.setVolume(0.5f);
         prop = GetComponentInChildren<spinning>();
 
         engineButton.buttonTimerFinished += startEngine;

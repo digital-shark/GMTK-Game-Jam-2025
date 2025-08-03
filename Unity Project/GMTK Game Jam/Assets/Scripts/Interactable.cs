@@ -1,4 +1,6 @@
 using UnityEngine;
+using FMOD;
+using FMODUnity;
 
 public class Interactable : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class Interactable : MonoBehaviour
         HELD,
         DOWN,
     }
+
+    public EventReference click;
+
 
     public STATE buttonState = STATE.UP;
     STATE oldState = STATE.UP;
@@ -63,6 +68,8 @@ public class Interactable : MonoBehaviour
                 oldState = buttonState;
                 buttonState = STATE.HELD;
                 timer = holdTime;
+
+                AudioManager.instance.PlayOneshot(click, transform.position);
             }
 
             timer -= Time.deltaTime;

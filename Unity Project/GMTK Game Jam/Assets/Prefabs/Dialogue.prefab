@@ -51,8 +51,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 4101796121041208944}
   lines:
-  - Can you hear me? Can you call in? There should be a Radio Transmitter taped somewhere
-    in your cockpit
+  - ' Can you hear me? Can you call in? There should be a Radio Transmitter taped
+    somewhere in your cockpit'
   - "Great! welcome to our Skywriter Academy. You\u2019ll be drawing a few figures
     in the sky today. There should be a document on your right hand showing our first
     exercise"
@@ -74,6 +74,13 @@ MonoBehaviour:
   - "It looks like you\u2019re done. To look at how well you did just call in over
     the radio again"
   textspeed: 0.03
+  walkie:
+    Guid:
+      Data1: -148233267
+      Data2: 1167117452
+      Data3: 564338068
+      Data4: 257540161
+    Path: event:/Walkie Talkie Transmission
   index: 0
 --- !u!1 &4747387480269910951
 GameObject:
@@ -140,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 49d31c88182edb24da1f9260fcb3e2f8, type: 2}
   m_sharedMaterial: {fileID: -4728764418369115943, guid: 49d31c88182edb24da1f9260fcb3e2f8, type: 2}

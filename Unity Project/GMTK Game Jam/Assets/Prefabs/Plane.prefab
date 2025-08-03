@@ -5305,6 +5305,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hint: Task
+  click:
+    Guid:
+      Data1: -603612280
+      Data2: 1254116432
+      Data3: 1178118806
+      Data4: -1982840861
+    Path: event:/Button Push
   buttonState: 2
   holdTime: 0
   timer: 0
@@ -7032,6 +7039,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hint: Radio transmitter
+  click:
+    Guid:
+      Data1: -148233267
+      Data2: 1167117452
+      Data3: 564338068
+      Data4: 257540161
+    Path: event:/Walkie Talkie Transmission
   buttonState: 0
   holdTime: 99999
   timer: 0
@@ -7899,6 +7913,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hint: Brake lever
+  click:
+    Guid:
+      Data1: -603612280
+      Data2: 1254116432
+      Data3: 1178118806
+      Data4: -1982840861
+    Path: event:/Button Push
   buttonState: 0
   holdTime: 0
   timer: 0
@@ -8321,6 +8342,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hint: Start Engine
+  click:
+    Guid:
+      Data1: -603612280
+      Data2: 1254116432
+      Data3: 1178118806
+      Data4: -1982840861
+    Path: event:/Button Push
   buttonState: 0
   holdTime: 1.2
   timer: 0
@@ -8465,6 +8493,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hint: Smoke lever
+  click:
+    Guid:
+      Data1: -603612280
+      Data2: 1254116432
+      Data3: 1178118806
+      Data4: -1982840861
+    Path: event:/Button Push
   buttonState: 0
   holdTime: 0
   timer: 0
