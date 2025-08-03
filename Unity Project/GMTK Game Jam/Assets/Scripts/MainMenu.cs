@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMODUnity;
+using FMOD.Studio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -7,6 +9,15 @@ public class MainMenu : MonoBehaviour
     private GameObject cameraToRotate;
     [SerializeField]
     float rotatingSpeed = 1;
+
+    public EventReference music;
+    private EventInstance player;
+
+    private void Start()
+    {
+        player = AudioManager.instance.createInstance(music);
+        player.start();
+    }
 
     private void Update()
     {
@@ -16,6 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        player.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadScene(1);
     }
 }

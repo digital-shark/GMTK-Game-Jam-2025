@@ -1838,6 +1838,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6528112421546101924, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
+      propertyPath: Music.Path
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528112421546101924, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
+      propertyPath: Music.Guid.Data1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528112421546101924, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
+      propertyPath: Music.Guid.Data2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528112421546101924, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
+      propertyPath: Music.Guid.Data3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528112421546101924, guid: d82c803d86fedd5448df0605ccb4f534, type: 3}
+      propertyPath: Music.Guid.Data4
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10148,6 +10168,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraToRotate: {fileID: 211569683}
   rotatingSpeed: 10
+  music:
+    Guid:
+      Data1: -193547360
+      Data2: 1098241912
+      Data3: 1634644405
+      Data4: -1542617820
+    Path: event:/music main track
 --- !u!114 &1436007321
 MonoBehaviour:
   m_ObjectHideFlags: 0
