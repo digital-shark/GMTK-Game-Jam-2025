@@ -1,6 +1,7 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using System.Collections;
 public class simplePlane : MonoBehaviour
 {
 
@@ -44,9 +45,11 @@ public class simplePlane : MonoBehaviour
 
     public EventReference clip;
     public EventReference engineStart;
+    public EventReference CrashSound;
     private EventInstance EngineStartAudio; 
     private EventInstance EngineAudio;
-    
+    private EventInstance CrashAudio;
+
     public float smokeDrainRate = 0.5f;
     public float amountOfSmoke = 100.0f;
     public ParticleSystem smokePS;
@@ -72,7 +75,6 @@ public class simplePlane : MonoBehaviour
     bool once = true;
     bool onceTwo = true;
 
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -155,6 +157,27 @@ public class simplePlane : MonoBehaviour
         }
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag != "Tutorial")
+        {
+            //We have crashed :(
+            CrashAudio = AudioManager.instance.createInstance(CrashSound);
+            CrashAudio.start();
+            FindAnyObjectByType<Fader>().ToBlack();
+            StartCoroutine(CrashCoroutine());
+        }
+    }
+
+    IEnumerator CrashCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        CrashAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        FindFirstObjectByType<GameManager>().ShowScoreScreen();
+        FindAnyObjectByType<Fader>().Fade();
     }
 
     void updateTutorial()

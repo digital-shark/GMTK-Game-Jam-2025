@@ -5204,6 +5204,59 @@ Transform:
   - {fileID: 6084394725010417067}
   m_Father: {fileID: 5474234067980703846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1919701031096863464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3876078975371511863}
+  - component: {fileID: 5711896420499859914}
+  m_Layer: 0
+  m_Name: CrashCollisionBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3876078975371511863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919701031096863464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.4, z: 2.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 644358333500760774}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5711896420499859914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919701031096863464}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_LayerOverridePriority: 3
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.137379, y: 1.484975, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2798840069067299844
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,6 +6577,7 @@ Transform:
   - {fileID: 521716946751187019}
   - {fileID: 4400198839660931889}
   - {fileID: 4198049884233551879}
+  - {fileID: 3876078975371511863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2576983041637908135
@@ -6852,6 +6906,13 @@ MonoBehaviour:
       Data3: -554468982
       Data4: 1205283094
     Path: event:/engine Start
+  CrashSound:
+    Guid:
+      Data1: 1915806837
+      Data2: 1184345589
+      Data3: 862910880
+      Data4: -114348656
+    Path: event:/Crash
   smokeDrainRate: 0.5
   amountOfSmoke: 100
   smokePS: {fileID: 5660049502929573728}
