@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using FMODUnity;
 
 public class dialogue : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class dialogue : MonoBehaviour
 
     public string[] lines;
     public float textspeed;
+    public EventReference walkie;
 
 
     public int index;
@@ -46,6 +48,7 @@ public class dialogue : MonoBehaviour
         {
             index++;
             text.text = string.Empty;
+            AudioManager.instance.PlayOneshot(walkie, FindFirstObjectByType<simplePlane>().transform.position);
             StartCoroutine(TypeLine());
         }
     }

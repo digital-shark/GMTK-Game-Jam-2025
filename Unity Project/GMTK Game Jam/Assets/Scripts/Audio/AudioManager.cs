@@ -19,6 +19,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        RuntimeManager.LoadBank("Master");
+        RuntimeManager.LoadBank("SFX");
+
         instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
