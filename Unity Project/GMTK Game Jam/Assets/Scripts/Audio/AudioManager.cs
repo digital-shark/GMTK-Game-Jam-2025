@@ -15,10 +15,12 @@ public class AudioManager : MonoBehaviour
         if (instance != null) 
         {
             Debug.LogError("More than 1 audiomanager not possible");
+            Destroy(gameObject);
             return;
         }
 
         instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()

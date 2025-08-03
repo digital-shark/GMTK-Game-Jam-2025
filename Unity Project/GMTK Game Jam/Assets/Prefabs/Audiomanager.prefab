@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Music:
     Guid:
-      Data1: -1827701500
-      Data2: 1224953422
-      Data3: 930872982
-      Data4: 609674769
-    Path: event:/audio test
+      Data1: -193547360
+      Data2: 1098241912
+      Data3: 1634644405
+      Data4: -1542617820
+    Path: event:/music main track
