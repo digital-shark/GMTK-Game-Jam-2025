@@ -43,6 +43,8 @@ public class simplePlane : MonoBehaviour
     private Vector3 localVelocity;
 
     public EventReference clip;
+    public EventReference engineStart;
+    private EventInstance EngineStartAudio; 
     private EventInstance EngineAudio;
     
     public float smokeDrainRate = 0.5f;
@@ -60,12 +62,15 @@ public class simplePlane : MonoBehaviour
     public rotatingDial angleThousandHand;
     public rotatingDial angleHundredHand;
 
+    public spinning prop;
+
     public dialogue dialogueSystem;
     public bool finishedTutorial;
 
     TutorialState TUTORIAL = TutorialState.START;
 
     bool once = true;
+    bool onceTwo = true;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -82,6 +87,10 @@ public class simplePlane : MonoBehaviour
 
         EngineAudio = AudioManager.instance.createInstance(clip);
         EngineAudio.setParameterByName("RPM Pitch", 0);
+
+        EngineStartAudio = AudioManager.instance.createInstance(engineStart);
+
+        prop = GetComponentInChildren<spinning>();
 
         engineButton.buttonTimerFinished += startEngine;
     }
@@ -124,6 +133,25 @@ public class simplePlane : MonoBehaviour
             once = true;
             EngineAudio.setParameterByName("RPM Pitch", targetThrust * 100f);
             EngineAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            prop.rotateSpeedTarget = 0;
+        }
+
+        if (engineButton.buttonState == Interactable.STATE.HELD && onceTwo)
+        {
+            prop.rotateSpeedTarget = 100;
+            onceTwo = false;
+            EngineStartAudio.start();
+        }
+        else if (engineButton.buttonState == Interactable.STATE.DOWN)
+        {
+            onceTwo = true;
+            EngineStartAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+        else if (engineButton.buttonState == Interactable.STATE.UP)
+        {
+            onceTwo = true;
+            EngineStartAudio.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            prop.rotateSpeedTarget = 0;
         }
 
 
